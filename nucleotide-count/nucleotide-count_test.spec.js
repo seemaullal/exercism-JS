@@ -21,23 +21,23 @@ describe('DNA', function() {
     expect(acid.count('T')).toEqual(2);
   });
 
-  xit('Empty DNS strand has no nucleotides', function() {
+  it('Empty DNS strand has no nucleotides', function() {
     var expected = {A: 0, T: 0, C: 0, G: 0};
     expect(dna().histogram()).toEqual(expected);
   });
 
-  xit('Repetitive sequence has only guanosine', function() {
+  it('Repetitive sequence has only guanosine', function() {
     var expected = {A: 0, T: 0, C: 0, G: 8};
     expect(dna('GGGGGGGG').histogram()).toEqual(expected);
   });
 
-  xit('Counts all nucleotides', function() {
+  it('Counts all nucleotides', function() {
     var strand = 'AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC';
     var expected = {A: 20, T: 21, C: 12, G: 17};
     expect(dna(strand).histogram()).toEqual(expected);
   });
 
-  xit('Validates DNA', function() {
+  it('Validates DNA', function() {
     expect(dna.bind(null, 'JOHNNYAPPLESEED')).toThrow();
   });
 
