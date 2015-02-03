@@ -72,10 +72,4 @@ describe('Anagram', function() {
     expect(matches).toEqual(["tan"]);
   });
 
-  it("matches() accepts single string argument",function() {
-    var subject = anagram("ant");
-    var matches = subject.matches("tan");
-
-    expect(matches).toEqual(["tan"]);
-  });
 });
