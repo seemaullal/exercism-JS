@@ -13,10 +13,13 @@ School.prototype.add = function (name,grade) {
 	}
 	else {
 		this._roster[grade].push(name);
+		this._roster[grade].sort();
 	}
 }
 
 School.prototype.grade = function(num) {
+	if (!this.roster()[num]) 
+		return [ ];
 	return this.roster()[num].sort();
 }
 
