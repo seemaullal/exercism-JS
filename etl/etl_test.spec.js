@@ -9,21 +9,21 @@ describe("Transform", function() {
     expect(transform(old)).toEqual(expected);
   });
 
-  xit("transforms more values", function() {
+  it("transforms more values", function() {
     var old = { 1: ["A", "E", "I", "O", "U"] };
     var expected = { a: 1, e: 1, i: 1, o: 1, u: 1 };
 
     expect(transform(old)).toEqual(expected);
   });
 
-  xit("transforms more keys", function() {
+  it("transforms more keys", function() {
     var old = { 1: ["A", "E"], 2: ["D", "G"] };
     var expected = { a: 1, e: 1, d: 2, g: 2 };
 
     expect(transform(old)).toEqual(expected);
   });
 
-  xit("transforms a full dataset", function() {
+  it("transforms a full dataset", function() {
     var old = {
       1: [ "A", "E", "I", "O", "U", "L", "N", "R", "S", "T" ],
       2: [ "D", "G" ],
