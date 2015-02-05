@@ -31,7 +31,7 @@ describe("Grains", function () {
     expect(grains.square(64)).toEqual(9223372036854775808);
   });
 
-  xit("total", function () {
+  it("total", function () {
     expect(grains.total()).toEqual(18446744073709551615);
   });
 });
