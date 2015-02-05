@@ -1,14 +1,19 @@
 function Triangle(side1,side2,side3) {
-	this.side1 = side1;
-	this.side2 = side2;
-	this.side3 = side3;
+	this.sides = [ ];
+	for (num in arguments) {
+		this.sides.push(+(arguments[num]))
+	}
+
+	this.sides.sort();
+	console.log(this.sides);
 }
 
 Triangle.prototype.kind = function() {
 
-	if ( this.side1 === this.side2 && this.side2 === this.side3 )
+	if ( this.sides[0] === this.sides[2] )
 		return 'equilateral';
-	if ( this.side1 === this.side2 || this.side1 === this.side3 || this.side2 === this.side3 )
+	if ( this.sides[0] === this.sides[1] || 
+		 this.sides[1] === this.sides[2] )
 		return 'isosceles';
 	return 'scalene';
 }
