@@ -23,31 +23,31 @@ describe("Space Age", function() {
     expect(age.onVenus()).toEqual(9.78);
   });
 
-  xit("age in mars years", function() {
+  it("age in mars years", function() {
     var age = new SpaceAge(2329871239);
     expect(age.onEarth()).toEqual(73.83);
     expect(age.onMars()).toEqual(39.25);
   });
 
-  xit("age in jupiter years", function() {
+  it("age in jupiter years", function() {
     var age = new SpaceAge(901876382);
     expect(age.onEarth()).toEqual(28.58);
     expect(age.onJupiter()).toEqual(2.41);
   });
 
-  xit("age in saturn years", function() {
+  it("age in saturn years", function() {
     var age = new SpaceAge(3000000000);
     expect(age.onEarth()).toEqual(95.06);
     expect(age.onSaturn()).toEqual(3.23);
   });
 
-  xit("age in uranus years", function() {
+  it("age in uranus years", function() {
     var age = new SpaceAge(3210123456);
     expect(age.onEarth()).toEqual(101.72);
     expect(age.onUranus()).toEqual(1.21);
   });
 
-  xit("age in neptune year", function() {
+  it("age in neptune year", function() {
     var age = new SpaceAge(8210123456);
     expect(age.onEarth()).toEqual(260.16);
     expect(age.onNeptune()).toEqual(1.58);
