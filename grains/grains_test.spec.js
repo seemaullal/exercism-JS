@@ -23,11 +23,11 @@ describe("Grains", function () {
     expect(grains.square(16)).toEqual(32768);
   });
 
-  xit("square 32", function () {
+  it("square 32", function () {
     expect(grains.square(32)).toEqual(2147483648);
   });
 
-  xit("square 64", function () {
+  it("square 64", function () {
     expect(grains.square(64)).toEqual(9223372036854775808);
   });
 
