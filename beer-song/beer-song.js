@@ -19,8 +19,7 @@ Beer.prototype.sing = function(start,finish) {
 	if (!finish) var finish = 0;
 	var song = '';
 	while (start >= finish) {
-		song += this.verse(start);
-		song += "\n";
+		song += this.verse(start) + "\n";
 		start--;
 	}
 	return song.slice(0,song.length-1);
