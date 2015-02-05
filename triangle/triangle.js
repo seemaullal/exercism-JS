@@ -10,7 +10,7 @@ Triangle.prototype.kind = function() {
 		return 'equilateral';
 	if ( this.side1 === this.side2 || this.side1 === this.side3 || this.side2 === this.side3 )
 		return 'isosceles';
-
+	return 'scalene';
 }
 
 module.exports = Triangle;
