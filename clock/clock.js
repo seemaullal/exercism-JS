@@ -40,6 +40,9 @@ String.prototype.minus = function(num) {
 		hours--;
 		min += 60;
 	}
+	if (hours < 0) {
+		hours = 24 + hours;
+	}
 	return at(hours,min);
 }
 
