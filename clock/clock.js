@@ -17,6 +17,13 @@ String.prototype.plus = function (num) {
 		num -= 60;
 	}
 	min += num;
+	while (min > 60) {
+		hours++;
+		min -= 60;
+	}
+	if (hours >= 24) {
+		hours = hours-24;
+	}
 	return at(hours,min);
 }
 

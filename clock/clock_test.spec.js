@@ -22,7 +22,7 @@ describe("Clock", function () {
     expect(clock.toString()).toEqual("11:01");
   });
 
-  xit("wraps around midnight", function () {
+  it("wraps around midnight", function () {
     var clock = at(23, 59).plus(2);
     expect(clock.toString()).toEqual("00:01");
   });
