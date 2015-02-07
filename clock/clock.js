@@ -27,4 +27,24 @@ String.prototype.plus = function (num) {
 	return at(hours,min);
 }
 
+String.prototype.minus = function(num) {
+	var time = this.split(':');
+	var hours = +(time[0]);
+	var min = +(time[1]);
+	while (num > 60) {
+		hours--;
+		num -= 60;
+	}
+	min -= num;
+	while (min < 0) {
+		hours--;
+		min += 60;
+	}
+	// if (hours >= 24) {
+	// 	hours = hours-24;
+	// }
+	return at(hours,min);
+
+}
+
 module.exports = { 'at': at } ;

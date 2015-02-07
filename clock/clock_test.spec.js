@@ -27,12 +27,12 @@ describe("Clock", function () {
     expect(clock.toString()).toEqual("00:01");
   });
 
-  xit("can subtract minutes", function () {
+  it("can subtract minutes", function () {
     var clock = at(10, 3).minus(3);
     expect(clock.toString()).toEqual("10:00");
   });
 
-  xit("can subtract over an hour", function () {
+  it("can subtract over an hour", function () {
     var clock = at(10, 3).minus(30);
     expect(clock.toString()).toEqual("09:33");
 
