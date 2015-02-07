@@ -7,7 +7,7 @@ describe("Clock", function () {
     expect(at(9).toString()).toEqual("09:00");
   });
 
-  xit("prints past the hour", function () {
+  it("prints past the hour", function () {
     expect(at(11, 9).toString()).toEqual("11:09");
     expect(at(11, 19).toString()).toEqual("11:19");
   });
