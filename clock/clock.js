@@ -40,11 +40,17 @@ String.prototype.minus = function(num) {
 		hours--;
 		min += 60;
 	}
-	// if (hours >= 24) {
-	// 	hours = hours-24;
-	// }
 	return at(hours,min);
+}
 
+String.prototype.equals = function (clock) {
+	var time = this.split(':');
+	var hours = +(time[0]);
+	var min = +(time[1]);
+	var otherTime = clock.split(':');
+	var otherHours = +(otherTime[0]);
+	var otherMin = +(otherTime[1]);
+	return hours === otherHours && min === otherMin;
 }
 
 module.exports = { 'at': at } ;

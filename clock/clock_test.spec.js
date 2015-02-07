@@ -40,7 +40,7 @@ describe("Clock", function () {
     expect(clock.toString()).toEqual("08:53");
   });
 
-  xit("can know if it's equal to another clock", function () {
+  it("can know if it's equal to another clock", function () {
     var clock1 = at(10, 3);
     var clock2 = at(10, 3);
     expect(clock1.equals(clock2)).toBe(true);
