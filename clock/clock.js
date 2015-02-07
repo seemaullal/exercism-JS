@@ -9,7 +9,15 @@ var at = function(hour,min) {
 }
 
 String.prototype.plus = function (num) {
-
+	var time = this.split(':');
+	var hours = +(time[0]);
+	var min = +(time[1]);
+	while (num > 60) {
+		hours++;
+		num -= 60;
+	}
+	min += num;
+	return at(hours,min);
 }
 
 module.exports = { 'at': at } ;
