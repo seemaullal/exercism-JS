@@ -4,7 +4,15 @@ var circularBuffer = function (size) {
 	this.read = function () {
 		if (arr.length === 0)
 			throw bufferEmptyException;
+		else {
+			return this.arr.pop();
+		}
+
 	}; 
+
+	this.write = function (value) {
+		this.arr.push(value.toString());
+	};
 
 	return this;
 };
