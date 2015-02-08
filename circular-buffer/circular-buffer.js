@@ -5,7 +5,7 @@ var circularBuffer = function (size) {
 		if (arr.length === 0)
 			throw bufferEmptyException;
 		else {
-			return this.arr.pop();
+			return this.arr.shift();
 		}
 
 	}; 

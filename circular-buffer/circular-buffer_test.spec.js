@@ -16,7 +16,7 @@ describe("CircularBuffer", function() {
     expect(buffer.read).toThrow(bufferEmptyException());
   });
   
-  xit("write and read back multiple items", function() {
+  it("write and read back multiple items", function() {
     var buffer = circularBuffer(2);
     buffer.write('1');
     buffer.write('2');
