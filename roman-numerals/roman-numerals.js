@@ -12,29 +12,13 @@ module.exports = function toRoman(num) {
 
 	var digits = num.toString().split("");
 	var romanNumeral = "";
-	if (digits.length === 4) {
-		romanNumeral += numToRoman[digits[0]*1000];
-		romanNumeral += numToRoman[digits[1]*100];
-		romanNumeral += numToRoman[digits[2]*10];
-		romanNumeral += numToRoman[digits[3]*1];
-		return romanNumeral;
+	while (digits.length < 4) {
+		digits.unshift('0');
 	}
-
-	if (digits.length === 3) {
-		romanNumeral += numToRoman[digits[0]*100];
-		romanNumeral += numToRoman[digits[1]*10];
-		romanNumeral += numToRoman[digits[2]*1];
-		return romanNumeral;
-	}
-
-	if (digits.length === 2) {
-		romanNumeral += numToRoman[digits[0]*10];
-		romanNumeral += numToRoman[digits[1]*1];
-		return romanNumeral;
-	}
-
-	if (digits.length === 1) {
-		romanNumeral += numToRoman[digits[0]*1];
-		return romanNumeral;
-	}
+	romanNumeral += numToRoman[digits[0]*1000];
+	romanNumeral += numToRoman[digits[1]*100];
+	romanNumeral += numToRoman[digits[2]*10];
+	romanNumeral += numToRoman[digits[3]*1];
+	return romanNumeral;
+	
 }
