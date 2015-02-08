@@ -14,6 +14,10 @@ var circularBuffer = function (size) {
 		this.arr.push(value.toString());
 	};
 
+	this.clear = function() {
+		this.arr = [ ];
+	}
+
 	return this;
 };
 

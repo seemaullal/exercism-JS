@@ -25,7 +25,7 @@ describe("CircularBuffer", function() {
     expect(buffer.read).toThrow(bufferEmptyException());
   });
   
-  xit("clearing a buffer", function() {
+  it("clearing a buffer", function() {
     var buffer = circularBuffer(2);
     buffer.write('1');
     buffer.write('2');
