@@ -34,11 +34,9 @@ var circularBuffer = function (size) {
 };
 
 var bufferEmptyException = function () {
-
 };
 
 var bufferFullException = function () {
-
 };
 
 module.exports = { 
