@@ -37,7 +37,7 @@ describe("CircularBuffer", function() {
     expect(buffer.read()).toBe('4');
   });
   
-  xit("alternate write and read", function() {
+  it("alternate write and read", function() {
     var buffer = circularBuffer(2);
     buffer.write('1');
     expect(buffer.read()).toBe('1');
@@ -45,7 +45,7 @@ describe("CircularBuffer", function() {
     expect(buffer.read()).toBe('2');
   });
   
-  xit("reads back oldest item", function() {
+  it("reads back oldest item", function() {
     var buffer = circularBuffer(3);
     buffer.write('1');
     buffer.write('2');
@@ -55,7 +55,7 @@ describe("CircularBuffer", function() {
     expect(buffer.read()).toBe('3');
   });
   
-  xit("writes of undefined or null don't occupy buffer", function() {
+  it("writes of undefined or null don't occupy buffer", function() {
     var buffer = circularBuffer(3);
     buffer.write(null);
     buffer.write(undefined);
@@ -63,7 +63,7 @@ describe("CircularBuffer", function() {
     expect(buffer.read()).toBe('1');
   });
   
-  xit("writing to a full buffer throws a BufferFullException", function() {
+  it("writing to a full buffer throws a BufferFullException", function() {
     var buffer = circularBuffer(2);
     buffer.write('1');
     buffer.write('2');
@@ -72,7 +72,7 @@ describe("CircularBuffer", function() {
     }).toThrow(bufferFullException());
   });
   
-  xit("forced writes over write oldest item in a full buffer", function() {
+  it("forced writes over write oldest item in a full buffer", function() {
     var buffer = circularBuffer(2);
     buffer.write('1');
     buffer.write('2');
