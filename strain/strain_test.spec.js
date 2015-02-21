@@ -6,25 +6,25 @@ describe("strain", function() {
     expect(strain.keep([], function(e) { return e < 10;})).toEqual([]);
   });
 
-  xit("keeps everything ", function() {
+  it("keeps everything ", function() {
     expect(strain.keep([1, 2, 3], function(e) { return e < 10;})).toEqual([1, 2, 3]);
   });
 
-  xit("keeps first and last", function() {
+  it("keeps first and last", function() {
     expect(strain.keep([1, 2, 3], function(e) { return (e % 2) === 1;})).toEqual([1, 3]);
   });
 
-  xit("keeps neither first nor last", function() {
+  it("keeps neither first nor last", function() {
     expect(strain.keep([1, 2, 3, 4, 5], function(e) { return (e % 2) === 0;})).toEqual([2, 4]);
   });
 
-  xit("keeps strings", function() {
+  it("keeps strings", function() {
     var words = "apple zebra banana zombies cherimoya zelot".split(" ");
     var result = strain.keep(words, function(word) { return word.indexOf("z") === 0;});
     expect(result).toEqual("zebra zombies zelot".split(" "));
   });
 
-  xit("keeps arrays", function() {
+  it("keeps arrays", function() {
     var rows = [
       [1, 2, 3],
       [5, 5, 5],
