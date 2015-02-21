@@ -1,5 +1,6 @@
 function Allergies (size) {
 	this.size = size;
+	this.allergies = this.list(this.size);
 }
 
 Allergies.prototype.list = function() {
@@ -11,17 +12,22 @@ Allergies.prototype.list = function() {
 		allergiesLeft = res[1];
 	}
 	allergies.sort(function(el1,el2) {
-		return el1.num-el2.num;
+		//sort from lowest allergy score to highest
+		return el1.num-el2.num; 
 	});
 
 	allergies = allergies.map (function(obj) {
+		//only want the actual allergies in the result
 		return obj.value;
 	});
-
 	return allergies;
 };
 
-function getAllergies(num) {
+Allergies.prototype.allergicTo = function (allergen) {
+	return this.allergies.indexOf(allergen) > -1;
+};
+
+function getAllergies(num) { //helper function for list()
 	if (num >= 128) {
 		return [{value: 'cats', num : 128},num-128];
 	}
