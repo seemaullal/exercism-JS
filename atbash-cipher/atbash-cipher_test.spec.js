@@ -14,11 +14,11 @@ describe("encode", function() {
     expect(atbash.encode('OMG')).toEqual('lnt');
   });
 
-  xit("encodes O M G", function() {
+  it("encodes O M G", function() {
     expect(atbash.encode('O M G')).toEqual('lnt');
   });
 
-  xit("encodes long words", function() {
+  it("encodes long words", function() {
     expect(atbash.encode('mindblowingly')).toEqual('nrmwy oldrm tob');
   });
 
