@@ -20,7 +20,14 @@ Allergies.prototype.list = function() {
 		//only want the actual allergies in the result
 		return obj.value;
 	});
-	return allergies;
+
+	return allergies.filter (function(element, index) {
+		//only want unique allergens
+		//this only returns true if the element is the 1st
+		//element with its value
+		return allergies.indexOf(element) === index;
+	});
+	
 };
 
 Allergies.prototype.allergicTo = function (allergen) {
