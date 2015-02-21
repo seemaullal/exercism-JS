@@ -10,6 +10,14 @@ Allergies.prototype.list = function() {
 		allergies.push(res[0]);
 		allergiesLeft = res[1];
 	}
+	allergies.sort(function(el1,el2) {
+		return el1.num-el2.num;
+	});
+
+	allergies = allergies.map (function(obj) {
+		return obj.value;
+	});
+
 	return allergies;
 };
 
