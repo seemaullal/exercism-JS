@@ -14,13 +14,11 @@ module.exports = {
 		});
 		var result ='';
 		encodedLetters.forEach(function(letter,index) {
-			console.log(index);
 			result += letter;
 			if ( (index+1) % 5 === 0)  {
 				result += ' ';
 			}
 		});
-
-		return result;
+		return result.trim();
 	}
 };
