@@ -27,7 +27,7 @@ describe('accumulate()', function() {
     expect(['HELLO', 'WORLD']).toEqual(result);
   });
 
-  xit('accumulate reversed strings', function() {
+  it('accumulate reversed strings', function() {
     var accumulator = function(word) {
       return word.split('').reverse().join('');
     };
@@ -37,7 +37,7 @@ describe('accumulate()', function() {
     expect(["eht", "kciuq", "nworb", "xof", "cte"]).toEqual(result);
   });
 
-  xit('accumulate recursively', function() {
+  it('accumulate recursively', function() {
     var result = accumulate('a b c'.split(/\s/), function(char) {
       return accumulate('1 2 3'.split(/\s/), function(digit) {
         return char + digit;
