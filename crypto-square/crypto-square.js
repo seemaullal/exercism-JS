@@ -25,6 +25,39 @@ Crypto.prototype.plaintextSegments = function() {
 	return segments.split(" ");
 };
 
+Crypto.prototype.ciphertext = function() {
+	var segments = this.plaintextSegments();
+	var columns = [ ];
+	var currSegment, currLetter;
+	for (var i=0; i<this.size(); i++) {
+		columns.push([]);
+	}
+	for (var j = 0; j < segments.length; j++) {
+		currSegment = segments[j];
+		for ( var k = 0; k < currSegment.length; k++) {
+			currLetter = currSegment[k];
+			columns[k].push(currLetter);
+		}
+	}
+	for (var m = 0; m < columns.length ; m++) {
+		columns[m] = columns[m].join('');
+	}
+
+	columns = columns.join('');
+	return columns;
+};
+
+Crypto.prototype.normalizeCiphertext = function() {
+	var normalized = '';
+	var cipher = this.ciphertext();
+	for (var i = 0; i < cipher.length; i++) {
+		normalized += cipher.charAt(i);
+		if ((i + 1) % this.cols === 0)
+			normalized += ' ';
+	}
+	return normalized.trim();
+};
+
 module.exports = Crypto;
 
 
