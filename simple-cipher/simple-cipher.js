@@ -14,10 +14,24 @@ Cipher.prototype.encode = function(text) {
 		if (newIndex >= letters.length) {
 			newIndex -= letters.length;
 		}
-		console.log(letters[newIndex]);
 		encodedChars.push(letters[newIndex]);
 	});
 	return encodedChars.join('');
+};
+
+Cipher.prototype.decode = function(cipher) {
+	var characters = cipher.split('');
+	var decodedChars = [ ];
+	var self = this;
+	characters.forEach(function(character,index) {
+		var newIndex = letters.indexOf(character) - 
+					   letters.indexOf(self.key[index]);
+		if (newIndex < 0) {
+			newIndex += letters.length;
+		}
+		decodedChars.push(letters[newIndex]);
+	});
+	return decodedChars.join('');
 };
 
 function generateRandomKey() {

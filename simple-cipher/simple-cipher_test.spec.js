@@ -14,11 +14,11 @@ describe('Random key cipher', function () {
     expect(cipher.encode('aaaaaaaaaa')).toEqual(cipher.key.substr(0, 10));
   });
 
-  xit('can decode', function () {
+  it('can decode', function () {
     expect(cipher.decode(cipher.key.substr(0, 10))).toEqual('aaaaaaaaaa');
   });
 
-  xit('is reversible', function () {
+  it('is reversible', function () {
     var plaintext = 'abcdefghij';
     expect(cipher.decode(cipher.encode(plaintext))).toEqual(plaintext);
   });
