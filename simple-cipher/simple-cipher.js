@@ -1,6 +1,15 @@
 var letters = 'abcdefghijklmnopqrstuvwxyz';
 
 function Cipher(key) {
+	if (key === '') { 
+		//error if argument provided is empty string
+		throw ('Bad key');
+	}
+	if (key && (key.toUpperCase() === key ||
+		 /^\d+$/.test(key))) { 
+		 //error for all upper case or all digit key
+		throw ('Bad key');
+	}
 	this.key = key || generateRandomKey();
 }
 
