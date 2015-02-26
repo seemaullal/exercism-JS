@@ -10,4 +10,12 @@ Triplet.prototype.sum = function() {
 	return sum;
 }
 
+Triplet.prototype.product = function() {
+	var product = 1;
+	this.sides.forEach(function(side) {
+		product *= side;
+	});
+	return product;
+}
+
 module.exports = Triplet;

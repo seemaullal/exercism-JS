@@ -6,7 +6,7 @@ describe('Triplet', function () {
     expect(new Triplet(3, 4, 5).sum()).toBe(12);
   });
 
-  xit('calculates the product', function () {
+  it('calculates the product', function () {
     expect(new Triplet(3, 4, 5).product()).toBe(60);
   });
 
