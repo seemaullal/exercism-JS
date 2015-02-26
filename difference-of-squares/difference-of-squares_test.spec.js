@@ -9,7 +9,7 @@ describe('Squares', function () {
       expect(squares.squareOfSums).toBe(225);
     });
 
-    xit('gets the sum of squares', function () {
+    it('gets the sum of squares', function () {
       expect(squares.sumOfSquares).toBe(55);
     });
 
@@ -22,11 +22,11 @@ describe('Squares', function () {
   describe('up to 10', function () {
     var squares = new Squares(10);
 
-    xit('gets the square of sums', function () {
+    it('gets the square of sums', function () {
       expect(squares.squareOfSums).toBe(3025);
     });
 
-    xit('gets the sum of squares', function () {
+    it('gets the sum of squares', function () {
       expect(squares.sumOfSquares).toBe(385);
     });
 
@@ -39,11 +39,11 @@ describe('Squares', function () {
   describe('up to 100', function () {
     var squares = new Squares(100);
 
-    xit('gets the square of sums', function () {
+    it('gets the square of sums', function () {
       expect(squares.squareOfSums).toBe(25502500);
     });
 
-    xit('gets the sum of squares', function () {
+    it('gets the sum of squares', function () {
       expect(squares.sumOfSquares).toBe(338350);
     });
 

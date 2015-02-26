@@ -14,7 +14,11 @@ Squares.prototype.calculateSquareofSums = function() {
 };
 
 Squares.prototype.calculateSumOfSquares = function() {
-	
+	var sum = 0
+	for (var i = 1 ; i <= this.size ; i++) {
+		sum += ( i * i );
+	}
+	return sum;
 };
 
 
