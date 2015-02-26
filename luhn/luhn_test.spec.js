@@ -12,12 +12,12 @@ describe('Luhn',function() {
     expect(luhn.checkDigit).toEqual(0);
   });
 
-  xit("addends",function() {
+  it("addends",function() {
     var luhn = new Luhn(12121);
     expect(luhn.addends).toEqual([1, 4, 1, 4, 1]);
   });
 
-  xit("too large added",function() {
+  it("too large added",function() {
     var luhn = new Luhn(8631);
     expect(luhn.addends).toEqual([7, 6, 6, 1]);
   });
