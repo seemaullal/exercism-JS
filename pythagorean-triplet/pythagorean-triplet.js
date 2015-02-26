@@ -19,10 +19,30 @@ Triplet.prototype.product = function() {
 }
 
 Triplet.prototype.isPythagorean = function() {
-	this.sides.sort();
+	this.sides = this.sides.sort(function(a,b) {
+		return a-b;
+	});
 	return Math.pow(this.sides[0] , 2) + 
 		   Math.pow(this.sides[1] , 2) === 
 		   Math.pow(this.sides[2] , 2);
+}
+
+Triplet.where = function(criteria) {
+	var triplets = [ ];
+	var maxFactor = criteria.maxFactor;
+	var minFactor = criteria.minFactor || 1;
+	var sum = criteria.sum
+	for (var a = minFactor; a <= maxFactor-1; a++) {
+		for (var b = a+1; b <= maxFactor; b++) {
+			for (var c = b+1 ; c <= maxFactor; c++) {
+				var triplet = new Triplet(a,b,c);
+				if (triplet.isPythagorean() &&  (!sum || triplet.sum() === sum)) {
+					triplets.push(triplet);
+				}
+			}
+		}
+	}
+	return triplets;
 }
 
 module.exports = Triplet;
