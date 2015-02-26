@@ -6,19 +6,19 @@ describe('pigLatin', function () {
     expect(pigLatin.translate('apple')).toEqual('appleay');
   });
 
-  xit('translates a word beginning with e', function () {
+  it('translates a word beginning with e', function () {
     expect(pigLatin.translate('ear')).toEqual('earay');
   });
 
-  xit('translates a word beginning with p', function () {
+  it('translates a word beginning with p', function () {
     expect(pigLatin.translate('pig')).toEqual('igpay');
   });
 
-  xit('translates a word beginning with k', function () {
+  it('translates a word beginning with k', function () {
     expect(pigLatin.translate('koala')).toEqual('oalakay');
   });
 
-  xit('translates a word beginning with ch', function () {
+  it('translates a word beginning with ch', function () {
     expect(pigLatin.translate('chair')).toEqual('airchay');
   });
 
@@ -30,19 +30,19 @@ describe('pigLatin', function () {
     expect(pigLatin.translate('square')).toEqual('aresquay');
   });
 
-  xit('translates a word beginning with th', function () {
+  it('translates a word beginning with th', function () {
     expect(pigLatin.translate('therapy')).toEqual('erapythay');
   });
 
-  xit('translates a word beginning with thr', function () {
+  it('translates a word beginning with thr', function () {
     expect(pigLatin.translate('thrush')).toEqual('ushthray');
   });
 
-  xit('translates a word beginning with sch', function () {
+  it('translates a word beginning with sch', function () {
     expect(pigLatin.translate('school')).toEqual('oolschay');
   });
 
-  xit('translates a phrase', function () {
+  it('translates a phrase', function () {
     expect(pigLatin.translate('quick fast run'))
       .toEqual('ickquay astfay unray');
   });
