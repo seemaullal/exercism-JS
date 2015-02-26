@@ -13,7 +13,7 @@ describe('Squares', function () {
       expect(squares.sumOfSquares).toBe(55);
     });
 
-    xit('gets the difference', function () {
+    it('gets the difference', function () {
       expect(squares.difference).toBe(170);
     });
 
@@ -30,7 +30,7 @@ describe('Squares', function () {
       expect(squares.sumOfSquares).toBe(385);
     });
 
-    xit('gets the difference', function () {
+    it('gets the difference', function () {
       expect(squares.difference).toBe(2640);
     });
 
@@ -47,7 +47,7 @@ describe('Squares', function () {
       expect(squares.sumOfSquares).toBe(338350);
     });
 
-    xit('gets the difference', function () {
+    it('gets the difference', function () {
       expect(squares.difference).toBe(25164150);
     });
 
