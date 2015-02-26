@@ -18,4 +18,11 @@ Triplet.prototype.product = function() {
 	return product;
 }
 
+Triplet.prototype.isPythagorean = function() {
+	this.sides.sort();
+	return Math.pow(this.sides[0] , 2) + 
+		   Math.pow(this.sides[1] , 2) === 
+		   Math.pow(this.sides[2] , 2);
+}
+
 module.exports = Triplet;
