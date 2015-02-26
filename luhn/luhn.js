@@ -1,21 +1,21 @@
 function Luhn(number) {
 	this.number = number;
 	this.checkDigit = this.number % 10; //this gives the last digit of the number
-	this.addends = this.calculateAddends();
-	this.checksum = this.calculateCheckSum();
+	this.addends = calculateAddends(this.number);
+	this.checksum = calculateCheckSum(this.number);
 	this.valid = this.checksum % 10 === 0;
 }
 
-Luhn.prototype.calculateCheckSum= function() {
+function calculateCheckSum(number) {
 	var sum = 0;
-	this.addends.forEach(function(addend) {
+	calculateAddends(number).forEach(function(addend) {
 		sum += addend;
 	});
 	return sum;
 };
 
-Luhn.prototype.calculateAddends =  function() {
-	var digits = this.number.toString().split('').reverse();
+function calculateAddends(number) {
+	var digits = number.toString().split('').reverse();
 	digits.forEach(function (digit,index,arr) {
 		if (index % 2 === 1) {
 			var newDigit = +(digit) * 2;
@@ -29,5 +29,14 @@ Luhn.prototype.calculateAddends =  function() {
 	});
 	return digits.reverse();
 };
+
+Luhn.create= function(number) {
+	var luhn = number * 10;
+	var checksum = calculateCheckSum(luhn);
+	var digit = 10 - (checksum % 10); 
+	return luhn + (digit === 10 ? 0 : digit); 
+
+}
+
 
 module.exports = Luhn;
