@@ -9,6 +9,8 @@ Series.prototype.getDigits = function() {
 }
 
 Series.prototype.slices = function(number) {
+	if (number > this.digits.length)
+		throw 'Slice size is too big.'
 	var sliceArray = [ ];
 	var curIndex = 0;
 	while (curIndex <= this.digits.length - number) {
