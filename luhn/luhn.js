@@ -3,6 +3,7 @@ function Luhn(number) {
 	this.checkDigit = this.number % 10; //this gives the last digit of the number
 	this.addends = this.calculateAddends();
 	this.checksum = this.calculateCheckSum();
+	this.valid = this.checksum % 10 === 0;
 }
 
 Luhn.prototype.calculateCheckSum= function() {

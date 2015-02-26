@@ -32,12 +32,12 @@ describe('Luhn',function() {
     expect(luhn.checksum).toEqual(21);
   });
 
-  xit("invalid number",function() {
+  it("invalid number",function() {
     var luhn = new Luhn(738);
     expect(luhn.valid).toEqual(false);
   });
 
-  xit("invalid number",function() {
+  it("invalid number",function() {
     var luhn = new Luhn(8739567);
     expect(luhn.valid).toEqual(true);
   });
