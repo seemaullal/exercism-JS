@@ -22,11 +22,11 @@ describe('pigLatin', function () {
     expect(pigLatin.translate('chair')).toEqual('airchay');
   });
 
-  xit('translates a word beginning with qu', function () {
+  it('translates a word beginning with qu', function () {
     expect(pigLatin.translate('queen')).toEqual('eenquay');
   });
 
-  xit('translates a word with a consonant preceding qu', function () {
+  it('translates a word with a consonant preceding qu', function () {
     expect(pigLatin.translate('square')).toEqual('aresquay');
   });
 
