@@ -76,4 +76,26 @@ LinkedList.prototype.count = function() {
 	return elements;
 }
 
+LinkedList.prototype.delete = function(value) {
+	if (!this.first && !this.last) {
+		throw ("can't delete from an empty list!");
+	}
+	if (this.first.data === value) { //delete first element
+		this.shift();
+		return;
+	} if (this.last.data === value) {
+		this.pop();
+		return;
+	} 
+	var curr = this.first;
+	while (curr) {
+		if (curr.data === value) {
+			curr.previous.next = curr.next;
+			curr.next.previous = curr.previous;
+			return;
+		}
+		curr = curr.next;
+	}
+}
+
 module.exports = LinkedList;
