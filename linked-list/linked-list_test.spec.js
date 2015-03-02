@@ -22,14 +22,14 @@ describe('LinkedList', function () {
     expect(list.shift()).toBe(20);
     expect(list.shift()).toBe(10);
   });
-  xit('unshift/pop', function () {
+  it('unshift/pop', function () {
     var list = new LinkedList();
     list.unshift(10);
     list.unshift(20);
     expect(list.pop()).toBe(10);
     expect(list.pop()).toBe(20);
   });
-  xit('example', function () {
+  it('example', function () {
     var list = new LinkedList();
     list.push(10);
     list.push(20);
