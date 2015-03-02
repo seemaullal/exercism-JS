@@ -23,6 +23,9 @@ LinkedList.prototype.push = function(value) {
 }
 
 LinkedList.prototype.pop = function() {
+	if (!this.first && !this.last) {
+		return undefined; //no elements in linked list
+	}
 	if (this.first === this.last) {
 		//only 1 element in list
 		var pop = this.first.data;
