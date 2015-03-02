@@ -66,4 +66,14 @@ LinkedList.prototype.unshift = function(value) {
 	}
 }
 
+LinkedList.prototype.count = function() {
+	var curr = this.first;
+	var elements = 0;
+	while (curr) {
+		elements++;
+		curr = curr.next;
+	}
+	return elements;
+}
+
 module.exports = LinkedList;
