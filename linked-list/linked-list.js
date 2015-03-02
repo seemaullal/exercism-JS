@@ -50,4 +50,17 @@ LinkedList.prototype.shift = function() {
 	return elementToRemove.data;
 }
 
+LinkedList.prototype.unshift = function(value) {
+	if (!this.first && !this.last) {
+		//empty list
+		var newElement = new Element(value,null,null);
+		this.first = newElement;
+		this.last = newElement;
+	} else {
+		var newElement = new Element(value,null,this.first);
+		this.first.previous = newElement;
+		this.first = newElement;
+	}
+}
+
 module.exports = LinkedList;
