@@ -36,4 +36,18 @@ LinkedList.prototype.pop = function() {
 	return elementToRemove.data;
 }
 
+LinkedList.prototype.shift = function() {
+	if (this.first === this.last) {
+		//only 1 element in list
+		var shift = this.first.data;
+		this.first = null;
+		this. last = null;
+		return shift;
+	}
+	var elementToRemove = this.first;
+	this.first = this.first.next;
+	this.first.previous = null;
+	return elementToRemove.data;
+}
+
 module.exports = LinkedList;

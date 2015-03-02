@@ -8,7 +8,7 @@ describe('LinkedList', function () {
     expect(list.pop()).toBe(20);
     expect(list.pop()).toBe(10);
   });
-  xit('push/shift', function () {
+  it('push/shift', function () {
     var list = new LinkedList();
     list.push(10);
     list.push(20);
