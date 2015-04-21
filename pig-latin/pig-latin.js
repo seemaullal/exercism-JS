@@ -1,30 +1,20 @@
 module.exports = {
-	translate : function(stringToTranslate) {
-		var words = stringToTranslate.split(' ');
-		var translated = words.map(this.getpigLatin);
-		return translated.join(' ');
+	getPigLatin : function(word) {
+		var vowels = ['a','e','i','o','u'];
+		if (vowels.indexOf(word[0]) > -1) 
+			return word + 'ay';
+		var letters = word.split('');
+		var addToEnd = '';
+		while (vowels.indexOf(letters[0]) ===-1) {
+			if (letters[0]==='q' && letters[1] ==='u')
+				addToEnd += letters.shift() + letters.shift();
+			else 
+				addToEnd += letters.shift();
+		}
+		return letters.join('') + addToEnd + 'ay';
 	},
-
-	getpigLatin : function(word) {
-		vowels = ['a','e','i','o','u'];
-		//check if the first letter of the string is a vowel
-		if (vowels.indexOf(word.charAt(0)) > -1)
-			return word + 'ay'
-		if (word.search('qu') > -1) {
-			//contains 'qu' which is counted as a unit
-			return word.substring(word.search('qu')+2,word.length) +
-				   word.substring(0,word.search('qu')+2) + 'ay';
-		}
-		else {
-			var index = 0;
-			var startingCons = '';
-			while (vowels.indexOf(word.charAt(index)) === -1) {
-				startingCons += word[index];
-				index++;
-			}
-			return  word.substring(index) + startingCons + 'ay';
-		}
-
+	translate : function(englishText) {
+		return englishText.split(' ').map(this.getPigLatin).join(' ');
 	}
-		
-}
+
+};
