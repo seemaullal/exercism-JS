@@ -33,7 +33,7 @@ export class Crypto {
     }
     for (let i = 0; i < segments.length; i++) {
       currSegment = segments[i];
-      for (var j =0 ; j < currSegment.length; j++) {
+      for (let j =0 ; j < currSegment.length; j++) {
         currLetter = currSegment[j];
         columns[j].push(currLetter);
       }
